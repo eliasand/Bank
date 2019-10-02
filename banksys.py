@@ -1,7 +1,9 @@
-import random
 
+f = open("saldo.txt", "r")
 #soldot tilldelas en random mängd pengar
-saldo = random.randint(0,1000)
+saldo = int(f.read())
+f.close()
+
 
 #banken frågar om lösenordet. lösenordet är lösen
 print("Välkommen till bank.")
@@ -25,13 +27,13 @@ while meny != "a":
         meny = input("Vad vill du välja.[i]nsättning--[u]ttag--[a]vsluta: ")
 
         if meny == "i":
-            insätt = float(input("Hur mycket vill du sätta in?: "))
-            saldo += insätt
-            print("Du satt in " + str(insätt) + "kr")
+            insatt = int(input("Hur mycket vill du sätta in?: "))
+            saldo += insatt
+            print("Du satt in " + str(insatt) + "kr")
 
 
         elif meny == "u":
-            utdrag = float(input("Hur mycket vill du ta ut?: "))
+            utdrag = int(input("Hur mycket vill du ta ut?: "))
             saldo -= utdrag
 
             if saldo < 0:
@@ -47,7 +49,6 @@ while meny != "a":
 
 print("Ha en trevlig dag.")
 
-
-f = open("saldo.txt", "w")
-f.write(str(saldo) + "kr" + "\n")
+f = open("saldo.txt" , "w")
+f.write(str(saldo))
 f.close()
