@@ -6,17 +6,33 @@ f.close()
 
 #banken frågar om lösenordet. lösenordet är lösen
 print("Välkommen till bank.")
-login = input("Snälla skriv in ditt lösenord: ")
-
+#login = input("Snälla skriv in ditt lösenord: ")
+inlog = False
+while inlog == False:
+    start = str(input("ny [a]nvändare eller [l]ogga in: "))
+    if start == "a":
+        print("skapar ny användare")
+        loggUser = str(input("Användarnamn: "))
+        loggPin = input("Pin: ")
+        print("Ny användare skapad.")
+    elif start == "l":
+        print("Välkommen till att logga in.")
+        user = str(input("Användare: "))
+        pin = input("Pin: ")
+        if loggUser != user:
+            print("Fel användare. Något gick fel.")
+        elif loggPin != pin:
+            print("Fel pin. Något gick fel.")
+        else:
+            print("Välkommen in user")
+            inlog = True
 
 #här räknar den ut om man skrev rätt lösenord
-try:
-    if login == "lösen":
-        print("Välkommen till ditt konto")
-    else:
-        print("Fel lösenord. Snälla försök igen senare.")
-except:
-    print("fel lösen")
+#if login == "lösen":
+#    print("Välkommen till ditt konto")
+#else:
+#    print("Fel lösenord. Snälla försök igen senare.")
+
 
 #här får man välja vad man vill göra i banken
 meny ="q"
