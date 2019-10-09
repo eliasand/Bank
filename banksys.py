@@ -12,21 +12,26 @@ print("Välkommen till bank.")
 inlog = False
 while inlog == False:
     start = str(input("ny [a]nvändare eller [l]ogga in: "))
+
+    #Här skapar man en användare med användarnamn och pin
     if start == "a":
         print("skapar ny användare")
         loggUser = str(input("Användarnamn: "))
         loggPin = input("Pin: ")
         print("Ny användare skapad.")
+
+
     elif start == "l":
         print("Välkommen till att logga in.")
         user = str(input("Användare: "))
         pin = input("Pin: ")
+
         if loggUser != user:
             print("Fel användare. Något gick fel.")
         elif loggPin != pin:
             print("Fel pin. Något gick fel.")
         else:
-            print("Välkommen in user")
+            print("Välkommen in " + user)
             inlog = True
 
 
