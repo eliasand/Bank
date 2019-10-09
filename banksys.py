@@ -1,12 +1,14 @@
+#importerar moduler
+import time
+
 #Här öppnas en saldo.txt
-f = open("saldo.txt", "r")
-saldo = int(f.read())
-f.close()
+s = open("saldo.txt", "r")
+saldo = int(s.read())
+s.close()
 
-
-#banken frågar om lösenordet. lösenordet är lösen
 print("Välkommen till bank.")
-#login = input("Snälla skriv in ditt lösenord: ")
+
+#här görs och loggar man in på en användare
 inlog = False
 while inlog == False:
     start = str(input("ny [a]nvändare eller [l]ogga in: "))
@@ -27,11 +29,6 @@ while inlog == False:
             print("Välkommen in user")
             inlog = True
 
-#här räknar den ut om man skrev rätt lösenord
-#if login == "lösen":
-#    print("Välkommen till ditt konto")
-#else:
-#    print("Fel lösenord. Snälla försök igen senare.")
 
 
 #här får man välja vad man vill göra i banken
@@ -67,8 +64,8 @@ while meny != "a":
 
 #Ett trevligt hejdå när programmet stängs av
 print("Ha en trevlig dag.")
-
+time.sleep(2)
 #saldon uppdateras med det nya saldot
-f = open("saldo.txt" , "w")
-f.write(str(saldo))
-f.close()
+s = open("saldo.txt" , "w")
+s.write(str(saldo))
+s.close()
